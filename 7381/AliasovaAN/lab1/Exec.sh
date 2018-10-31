@@ -1,4 +1,4 @@
-g++ ./Sourse/lab1.cpp -o Lab1
+g++ ./Sourse/lb1.cpp -o Lab1
 echo -e '_______\nTest 1:'
 cat ./Tests/Test1.txt
 echo -e '_______\nTesting:\n'
@@ -38,11 +38,7 @@ echo -e '_______\nTest 8:'
 cat ./Tests/Test8.txt
 echo -e '_______\nTesting:\n'
 ./Lab1 < ./Tests/Test8.txt
-echo -e ''
-echo -e '_______\nTest 9:'
-cat ./Tests/Test9.txt
-echo -e '_______\nTesting:\n'
-./Lab1 < ./Tests/Test9.txt
+
 echo -e ''
 echo -e '_______\nTest 10:'
 cat ./Tests/Test10.txt
@@ -53,4 +49,16 @@ echo -e '_______\nTest 11:'
 cat ./Tests/Test11.txt
 echo -e '_______\nTesting:\n'
 ./Lab1 < ./Tests/Test11.txt
+echo -e ''
+echo -e '_______\nTest 12:'
+cat ./Tests/Test12.txt
+echo -e '_______\nTesting:\n'
+./Lab1 < ./Tests/Test12.txt
+echo -e ''
+echo -e '_______\nTest 13:'
+cat ./Tests/Test13.txt
+echo -e '_______\nTesting:\n'
+./Lab1 < ./Tests/Test13.txt
+
+
 
