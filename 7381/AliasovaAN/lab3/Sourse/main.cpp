@@ -8,22 +8,31 @@ void rewrite(std::istream &fin, std::ostream &fout){//функция для вы
 	std::string input; 
 	while(!fin.eof()){ //пока fin()
 		getline(fin, input);
+		int count = 1;
 		for(auto i : input){ //Ключевое слово auto указывает компилятору использовать выражение инициализации объявленной переменной, или параметр лямбда-выражения, чтобы вывести ее тип.
-			if(i > '9' || i < '0')
+						
+			if(i > '9' || i < '0'){
 				other.push(i); //push in other
-			else
+				std::cout<<"push elem №" << count <<" in other's array"<<" : "<< i << std::endl;
+			}
+			else{
 				numbers.push(i); //push in numbers
+				std::cout<<"push elem №" << count << " in number's array" <<" : "<< i << std::endl;
+			}
+			count++;
 			unsigned char c;
-			std::cout << "numbers: ";
+			std::cout << "numbers: " << std::endl;
 			for(int j=0; j<numbers.get_size(); ++j){ //вывод содержимого numbers
 				c = numbers.pop();
+				//std::cout << "	pop element №"<< j <<" : "<< c << std::endl;
 				std::cout << c;
 				numbers.push(c);
 			}
 			std::cout << std::endl;
-			std::cout << "other: ";
-			for(int j=0; j<other.get_size(); ++j){ //вывод содержимого other
+			std::cout << "other: "<< std::endl;
+			for(int j=0; j<other.get_size(); j++){ //вывод содержимого other
 				c = other.pop();
+				//std::cout << "	pop element №"<< j <<" : "<< c << std::endl;
 				std::cout << c;
 				other.push(c);
 			}
@@ -59,20 +68,14 @@ int main(){
 			out_file.close();
 			continue;
 		}
-		std::istream fin(&in_file);
+		std::istream fin(&in_file);//считывание посимвольно
 		std::ostream fout(&out_file);
-		if(fin.peek() == EOF){
-			std::cout<<"Fail is empty!";
-			return 0;
-		}
 		rewrite(fin, fout);
 		in_file.close();
 		out_file.close();
 	}
 	return 0;
 }
-
-
 
 
 
